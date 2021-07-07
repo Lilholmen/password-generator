@@ -1,0 +1,61 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  background: #f1f5f8;
+  color: #102a42;
+}
+
+.password {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70% 30%;
+  margin: 0 auto;
+  max-width: 600px;
+  min-height: 100vh;
+  max-height: 100%;
+  background-color: #f1f5f8;
+}
+
+.password__parameter-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 70px 70px 70px 70px 70px;
+  gap: 5px 0px;
+  margin: 5px;
+}
+
+.password__length {
+  display: grid;
+  grid-template-columns: 350px 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.length__title {
+  font-size: 19px;
+  margin: auto 0;
+}
+
+.length__counter {
+  font-size: 30px;
+  color: green;
+  text-align: center;
+  margin: auto 0;
+}
+
+.length__button {
+  font-size: 20px;
+}
+
+.password__parameter {
+  height: 70px;
+  border: 1px solid rgb(241, 27, 27);
+}
+
+.password__output-section {
+  border: 1px solid black;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="password">
+        <div class="password__parameter-section">
+          <div class="password__length">
+            <h3 class="length__title">Number of characters in the password:</h3>
+            <button class="length__button length__button--decrease decrease">
+              decrease
+            </button>
+            <span class="length__counter">999</span>
+            <button class="length__button length__button--increase increase">
+              increase
+            </button>
+          </div>
+          <div class="password__parameter">
+            <div class="parameter__title">Lowercase letters</div>
+          </div>
+          <div class="password__parameter">
+            <div class="parameter__title">Uppercase letters</div>
+          </div>
+          <div class="password__parameter">
+            <div class="parameter__title">Numbers</div>
+          </div>
+          <div class="password__parameter">
+            <div class="parameter__title">Special symbols</div>
+          </div>
+          <div class="password__parameter">
+            <div class="parameter__title">Special2</div>
+          </div>
+        </div>
+        <div class="password__output-section"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
