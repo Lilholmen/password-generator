@@ -25,23 +25,37 @@
               increase
             </button>
           </div>
-          <div class="password__parameter">
-            <div class="parameter__title">Lowercase letters</div>
+          <div class="password__parameter password__parameter--on" id="1">
+            <h4 class="parameter__title">Lowercase letters</h4>
+            <div class="parameter__body"></div>
           </div>
-          <div class="password__parameter">
-            <div class="parameter__title">Uppercase letters</div>
+          <div class="password__parameter password__parameter--off" id="2">
+            <h4 class="parameter__title">Uppercase letters</h4>
+            <div class="parameter__body"></div>
           </div>
-          <div class="password__parameter">
-            <div class="parameter__title">Numbers</div>
+          <div class="password__parameter password__parameter--off" id="3">
+            <h4 class="parameter__title">Numbers</h4>
+            <div class="parameter__body"></div>
           </div>
-          <div class="password__parameter">
-            <div class="parameter__title">Special symbols</div>
-          </div>
-          <div class="password__parameter">
-            <div class="parameter__title">Special2</div>
+          <div class="password__parameter password__parameter--off" id="4">
+            <h4 class="parameter__title">Special symbols</h4>
+            <div class="parameter__body"></div>
           </div>
         </div>
-        <div class="password__output-section"></div>
+        <div class="password__output-section">
+          <div class="output-section__buttons-section">
+            <button
+              class="buttons-section__button button__generate"
+              id="generate"
+            >
+              Generate
+            </button>
+            <button class="buttons-section__button button__copy" id="copy">
+              Copy
+            </button>
+          </div>
+          <div class="output-section__result"></div>
+        </div>
       </div>
     </div>
 
