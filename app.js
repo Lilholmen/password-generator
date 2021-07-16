@@ -81,7 +81,14 @@ buttonGenerate.addEventListener('click', () => {
 });
 
 buttonCopy.addEventListener('click', () => {
-  //document.execCommand('copy');
+  navigator.clipboard
+    .writeText(passwordOutput.textContent)
+    .then(() => {
+      //
+    })
+    .catch((err) => {
+      console.log('Copy to clippboard does not working', err);
+    });
 });
 
 passwordOutput.textContent = generatePassword(
