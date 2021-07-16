@@ -8,40 +8,47 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Password Generator</title>
   </head>
   <body>
     <div class="wrapper">
       <div class="password">
+        <!-- length section -->
+        <div class="password__length">
+          <h3 class="length__title">Number of characters in the password:</h3>
+          <button class="length__button length__button--decrease decrease">
+            &#128071;
+          </button>
+          <input class="length__counter" type="text" value="12" maxlength="2" />
+          <button class="length__button length__button--increase increase">
+            &#128070;
+          </button>
+        </div>
+        <!-- end length section -->
+
+        <!-- parameter section -->
         <div class="password__parameter-section">
-          <div class="password__length">
-            <h3 class="length__title">Number of characters in the password:</h3>
-            <button class="length__button length__button--decrease decrease">
-              decrease
-            </button>
-            <span class="length__counter">999</span>
-            <button class="length__button length__button--increase increase">
-              increase
-            </button>
-          </div>
           <div class="password__parameter password__parameter--on" id="1">
-            <h4 class="parameter__title">Lowercase letters</h4>
+            <h4 class="parameter__title">Lowercase</h4>
             <div class="parameter__body"></div>
           </div>
           <div class="password__parameter password__parameter--off" id="2">
-            <h4 class="parameter__title">Uppercase letters</h4>
+            <h4 class="parameter__title">Uppercase</h4>
             <div class="parameter__body"></div>
           </div>
-          <div class="password__parameter password__parameter--off" id="3">
+          <div class="password__parameter password__parameter--on" id="3">
             <h4 class="parameter__title">Numbers</h4>
             <div class="parameter__body"></div>
           </div>
           <div class="password__parameter password__parameter--off" id="4">
-            <h4 class="parameter__title">Special symbols</h4>
+            <h4 class="parameter__title">Symbols</h4>
             <div class="parameter__body"></div>
           </div>
         </div>
+        <!-- end parameter section -->
+
+        <!-- output section -->
         <div class="password__output-section">
           <div class="output-section__buttons-section">
             <button
@@ -56,6 +63,7 @@
           </div>
           <div class="output-section__result"></div>
         </div>
+        <!-- end output section -->
       </div>
     </div>
 

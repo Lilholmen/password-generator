@@ -7,10 +7,13 @@
   border: none;
 }
 
+body {
+  background: #515151;
+  color: rgb(156, 220, 254);
+}
+
 .wrapper {
   font-family: 'Open Sans', sans-serif;
-  background: #f1f5f8;
-  color: #102a42;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -20,6 +23,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 70% 30%;
+  background: #303030;
   margin: 0 auto;
   width: 720px;
   min-height: 100vh;
@@ -27,11 +31,6 @@
 }
 
 .password__parameter-section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 4rem 5rem 5rem 5rem 5rem;
-  gap: 0.1rem 0;
-  margin: 5px;
 }
 
 .password__output-section {
@@ -43,6 +42,7 @@
 }
 /*-----------------------------------------------------------*/
 .password__length {
+  height: 4rem;
   display: grid;
   grid-template-columns: 350px 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -65,16 +65,15 @@
 }
 /*-----------------------------------------------------------*/
 .password__parameter {
-  height: 70px;
-  border: 2px solid black;
+  height: 5rem;
 }
 
 .password__parameter--off {
-  border-color: rgb(241, 27, 27);
+  background: #f5001d;
 }
 
 .password__parameter--on {
-  border-color: green;
+  background: #00b74a;
 }
 
 .parameter__title {

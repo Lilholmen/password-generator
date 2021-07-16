@@ -1,0 +1,136 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  background: #303030;
+}
+
+.wrapper {
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.password {
+  display: grid;
+  grid-template-rows: 7rem 1fr 23rem;
+  grid-template-columns: 60rem;
+  height: 100%;
+  margin: 0 auto;
+}
+/* length section */
+.password__length {
+  display: flex;
+  font-size: 2.2rem;
+  color: white;
+  background: #007acc;
+  justify-content: space-between;
+}
+
+.length__title {
+  margin: auto 0 auto 1rem;
+}
+
+.length__counter {
+  color: white;
+  background: none;
+  width: 2.5rem;
+  font-size: 2rem;
+  outline: none;
+  text-align: center;
+}
+
+.length__button {
+  background: none;
+  font-size: 3rem;
+}
+/* parameter section */
+.password__parameter-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 60rem) {
+  .password {
+    grid-template-columns: 40rem;
+  }
+
+  .password__length {
+    font-size: 1.3rem;
+  }
+
+  .password__parameter-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.password__parameter {
+}
+
+.password__parameter--on {
+  background: rgb(116, 191, 71);
+  color: #303030;
+}
+
+.password__parameter--on:hover {
+  background: hsl(98, 48%, 56%);
+}
+
+.password__parameter--off {
+  background: #515151;
+  color: white;
+}
+
+.password__parameter--off:hover {
+  background: hsl(0, 0%, 36%);
+}
+
+.parameter__title {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.parameter__body {
+  font-size: 3rem;
+  word-break: break-all;
+  margin: 1rem;
+  letter-spacing: 1rem;
+}
+/* outpet section */
+.password__output-section {
+  height: 100%;
+  background: #515151;
+}
+
+.output-section__buttons-section {
+  display: flex;
+}
+
+.buttons-section__button {
+  width: 50%;
+  height: 7rem;
+  background: #007acc;
+  color: white;
+  font-size: 3rem;
+}
+
+.output-section__result {
+  color: white;
+  font-size: 3rem;
+  word-break: break-all;
+  margin: 0.8rem;
+  font-family: 'Consolas', monospace;
+  user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+}

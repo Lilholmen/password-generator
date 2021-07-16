@@ -3,14 +3,15 @@ const UPLETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const NUMBERS = '0123456789';
 const SPECIAL = '!?@#$%^&*()_-=+,.<>\\/[]{}"|\'';
 const ALLPARAMETERS = [LOLETTERS, UPLETTERS, NUMBERS, SPECIAL];
-const parametersMask = [true, false, false, false];
+const parametersMask = [true, false, true, false];
 
 const counter = document.querySelector('.length__counter');
 const buttonCounterAll = document.querySelectorAll('.length__button');
-let passwordLength = counter.textContent;
+let passwordLength = counter.value;
 
 const buttonParameterAll = document.querySelectorAll('.password__parameter');
 const buttonGenerate = document.querySelector('#generate');
+const buttonCopy = document.querySelector('#copy');
 const passwordOutput = document.querySelector('.output-section__result');
 
 addParameterText(ALLPARAMETERS);
@@ -21,18 +22,22 @@ buttonCounterAll.forEach((item) => {
 
     if (styles.contains('decrease') && passwordLength > 3) {
       passwordLength--;
-    } else if (styles.contains('increase') && passwordLength < 999) {
+    } else if (styles.contains('increase') && passwordLength < 99) {
       passwordLength++;
     }
 
-    counter.style.color = passwordLength > 7 ? 'green' : 'red';
-    counter.textContent = passwordLength;
+    counter.value = passwordLength;
 
     passwordOutput.textContent = generatePassword(
       applyParametrs(ALLPARAMETERS, parametersMask),
       passwordLength
     );
   });
+});
+
+counter.addEventListener('input', userCounterInput);
+counter.addEventListener('focusout', () => {
+  counter.value = passwordLength;
 });
 
 buttonParameterAll.forEach((parameter) => {
@@ -51,6 +56,16 @@ buttonParameterAll.forEach((parameter) => {
       parametersMask[parameter.id - 1] = false;
     }
 
+    if (!parametersMask.find((item) => item === true)) {
+      parametersMask[0] = true;
+
+      const firstParameter = document.querySelector(
+        '.password__parameter'
+      ).classList;
+      firstParameter.remove('password__parameter--off');
+      firstParameter.add('password__parameter--on');
+    }
+
     passwordOutput.textContent = generatePassword(
       applyParametrs(ALLPARAMETERS, parametersMask),
       passwordLength
@@ -63,6 +78,10 @@ buttonGenerate.addEventListener('click', () => {
     applyParametrs(ALLPARAMETERS, parametersMask),
     passwordLength
   );
+});
+
+buttonCopy.addEventListener('click', () => {
+  //document.execCommand('copy');
 });
 
 passwordOutput.textContent = generatePassword(
@@ -99,4 +118,23 @@ function applyParametrs(all, mask) {
   });
 
   return applied.join('');
+}
+
+function userCounterInput(event) {
+  const inputValue = +event.target.value;
+
+  if (isNaN(inputValue)) {
+    return;
+  } else if (inputValue < 3) {
+    passwordLength = 3;
+  } else if (inputValue > 99) {
+    passwordLength = 99;
+  } else {
+    passwordLength = inputValue;
+  }
+
+  passwordOutput.textContent = generatePassword(
+    applyParametrs(ALLPARAMETERS, parametersMask),
+    passwordLength
+  );
 }
