@@ -60,20 +60,6 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 60rem) {
-  .password {
-    grid-template-columns: 40rem;
-  }
-
-  .password__length {
-    font-size: 1.3rem;
-  }
-
-  .password__parameter-section {
-    grid-template-columns: 1fr;
-  }
-}
-
 .password__parameter {
 }
 
